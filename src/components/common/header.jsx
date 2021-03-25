@@ -4,13 +4,11 @@ import { connect } from 'react-redux';
 
 // Common Header Components
 import MainMenu from './partials/main-menu';
-import CartMenu from './partials/cart-menu';
-import SearchToggle from './partials/search-toggle';
 
 import { showModal } from '../../actions';
 
 function Header( props ) {
-    const { wishlist, container } = props;
+    const { container } = props;
 
     return (
         <header className="header header-7">
@@ -28,37 +26,13 @@ function Header( props ) {
                     </div>
 
                     {
-                        container === "container" ?
-                            <div className="header-right">
+                        container === "containerd" ?
+                            <div className="header-right mr-lg-0 mr-auto">
                                 <MainMenu />
-
-                                <div className="header-search">
-                                    <SearchToggle />
-                                </div>
-
-                                <Link to={ `${process.env.PUBLIC_URL}/shop/wishlist` } className="wishlist-link">
-                                    <i className="icon-heart-o"></i>
-                                    <span className="wishlist-count">{ wishlist.length }</span>
-                                </Link>
-
-                                <CartMenu />
                             </div> :
                             <>
-                                <div className="header-center">
+                                <div className="header-right mr-lg-0 mr-auto">
                                     <MainMenu />
-                                </div>
-
-                                <div className="header-right ml-lg-0 ml-auto">
-                                    <div className="header-search">
-                                        <SearchToggle />
-                                    </div>
-
-                                    <Link to={ `${process.env.PUBLIC_URL}/shop/wishlist` } className="wishlist-link">
-                                        <i className="icon-heart-o"></i>
-                                        <span className="wishlist-count">{ wishlist.length }</span>
-                                    </Link>
-
-                                    <CartMenu />
                                 </div>
                             </>
                     }

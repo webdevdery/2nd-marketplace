@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 
 // import Custom Components
 import OwlCarousels from '../features/owl-carousel';
+import Hero from '../features/hero';
 import QuickView from '../features/product/common/quickview';
 import SideBarFilter from '../features/sidebar/sidebar-filter';
 import NewsletterModal from '../features/modal/newsletter-modal';
@@ -34,12 +35,13 @@ function HomePage( props ) {
     return (
         <>
             <Helmet>
-                <title>Molla React Ecommerce - Furniture Store</title>
+                <title>SuperRare | Authentic Digital Art Marketplace</title>
             </Helmet>
 
             <h1 className="d-none">Molla React Ecommerce - Furniture Store</h1>
 
             <div className="main">
+                <Hero />
                 <div className="intro-slider-container mb-4">
                     <OwlCarousels adClass="intro-slider owl-simple owl-nav-inside" carouselOptions={ introSlider }>
                         {
